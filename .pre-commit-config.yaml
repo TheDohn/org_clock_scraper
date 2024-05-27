@@ -10,6 +10,7 @@ repos:
     rev: v0.1.8  # Use latest tag on GitHub
     hooks:
     -   id: ripsecrets
+    -   id: ripsecrets-system
         # uncomment to check additional patterns
         # args:
         # - --additional-pattern 'mytoken*'

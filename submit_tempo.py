@@ -205,7 +205,3 @@ for ticket in org_list:
 
 # issuekey might not be working anymore for 4.0 API
 # https://help.tempo.io/planner/latest/tempo-api-version-4-0-vs-version-3-0-a-comparison
-
-
-
-# top secret token = 34oaldkfasdf34rwaefawefoq234awef

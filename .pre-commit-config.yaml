@@ -14,3 +14,7 @@ repos:
         # args:
         # - --additional-pattern 'mytoken*'
         # - --additional-pattern 'mykey*'
+-   repo: https://github.com/gitleaks/gitleaks
+    rev: v8.16.1
+    hooks:
+      - id: gitleaks

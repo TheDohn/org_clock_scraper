@@ -13,4 +13,4 @@ Example Org mode table:
      | \_      [TEAMOPS-8 NB-T] misc |        |   |      | 0:01 |
      #+END:
 
-Entries take the form [<Jira ticket> <billable type>]
+Entries take the form `[<Jira ticket> <billable type>]`

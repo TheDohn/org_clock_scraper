@@ -186,19 +186,19 @@ for ticket in org_list:
                 url     = 'https://api.tempo.io/core/3/worklogs',
                 # url     = 'https://api.tempo.io/4/worklogs',
                 data    = json.dumps(ticket),
-                headers = {'Content-type': 'application/json', 'Authorization': 'Bearer ' + os.getenv('TEMPO_BEARER_TOKEN')}
+                headers = {
+                    'Content-type':  'application/json',
+                    'Authorization': 'Bearer ' + os.getenv('TEMPO_BEARER_TOKEN')
+                }
                 )
-    # print(request.body)
-    # print(request.dir())
     # this gives all attributes
     # print(dir(request))
-    # print('\n')
-    # print(request.reason)
-    # print('\n')
-    # this is very useful for debugging a 400/404 error, which can occur if someone changes the fields in ticket submissions
-    # print(request.json())
-    # print('\n')
-    # print(request.json)
+    #
+    # if there is a '4' in this, it is probably an error, in which case the json will probably contain an error:
+    if '4' in str(request.status_code):
+        print("Whoops...\n")
+        print(request.json(), "\n")
+
     print(ticket)
     print('Tempo API response:', request.status_code, '\n')
 

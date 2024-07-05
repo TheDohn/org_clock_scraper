@@ -3,7 +3,7 @@ import os
 from datetime import date
 import re
 import json
-
+from termcolor import cprint
 
 # TODO:
 
@@ -21,6 +21,7 @@ today = date.today().strftime('%Y-%m-%d') # for actually running the script dail
 # today = '2023-10-27' # in case I need to run this for a specific day
 #today = '2021-06-04' # just for testing
 #today = '2021-06-19' # for testing with short times
+# today = '2024-07-08'
 print("Today is", today, "\n")
 record = False
 record_counter = 0
@@ -196,11 +197,11 @@ for ticket in org_list:
     #
     # if there is a '4' in this, it is probably an error, in which case the json will probably contain an error:
     if '4' in str(request.status_code):
-        print("Whoops...\n")
-        print(request.json(), "\n")
+        cprint("Whoops...\n", 'red')
+        cprint(f"{request.json()} \n", 'red')
 
-    print(ticket)
-    print('Tempo API response:', request.status_code, '\n')
+    cprint(ticket, 'green')
+    cprint(f'Tempo API response: {request.status_code}\n', 'green')
 
 
 # issuekey might not be working anymore for 4.0 API

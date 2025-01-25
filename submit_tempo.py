@@ -27,6 +27,7 @@ record = False
 record_counter = 0
 org_table = []
 with open(file = 'IXIS_JOURNAL.org') as f:
+# with open(file = '~/Documents/org_mode/IXIS_journal/IXIS_Journal.org') as f:
     for line in f.readlines():
         # start recording when you find today's org table
         if ('#+BEGIN: clocktable'         in prior_lines[0] and
@@ -185,6 +186,11 @@ if len(org_list) >=10:
 for ticket in org_list:
     request = requests.post(
                 url     = 'https://api.tempo.io/core/3/worklogs',
+        #>>>NOTE: if I need to switch to the 4.0API check the Network in a web browser,
+        #>>>I think the Request URL is: https://app.tempo.io/rest/tempo-timesheets/4/worklogs/
+        #>>> and I can also inspect the headers etc.
+        # NOTE: I might be able to get what I need from this library, too:
+        # https://github.com/stanislavulrych/tempo-api-python-client
                 # url     = 'https://api.tempo.io/4/worklogs',
                 data    = json.dumps(ticket),
                 headers = {
